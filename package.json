@@ -1,0 +1,36 @@
+{
+  "name": "root",
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/react": "^6.4.9",
+    "babel-loader": "^8.2.3",
+    "lerna": "^4.0.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Samala Sumanth <ssumanth@roostify.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "scripts": {
+    "build": "lerna run build ",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "postbuild": "cp -r ./packages/app/dist/** .",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "copy": "cp -r index.js index.js.map ../roostify/node_modules/finicity-ui/",
+    "lerna-publish": "lerna publish"
+  }
+}
